@@ -1,0 +1,293 @@
+@font-face {
+    font-family: 'simple';
+    src: url(./fonts/LTInternet-Regular.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: 'topic';
+    src: url(./fonts/LEMONMILK-Medium.otf);
+    font-style: normal;
+}
+@font-face {
+    font-family: 'normal';
+    src: url(./fonts/CaviarDreams.ttf);
+}
+:root{
+    --bg-color: #023336;
+    --main-bg: #eaf8e7;
+    --card-bg: #fff;
+    --card-color: #023620;
+    --card-shadow: #4da674;
+    --card-text: #000;
+    --blue: rgba(121, 169, 175, 0.87);
+    --header-bg: #ebf3eade;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-family: 'normal';
+    font-size: 1.8rem;
+    color: black;
+    background-color: whitesmoke;
+}
+.page{
+    display: grid;
+    grid-template-areas: 
+    "board head head head head"
+    "board main main main main"
+    "board main main main main"
+    "board main main main main"
+    "board main main main main"
+    "board main main main main"
+    "foot foot foot foot foot"
+    ;
+}
+h2, h3, h4{
+    font-family: 'topic';
+}
+header{
+    padding: 10px 5px;
+    grid-area: head;
+    background-color: var(--header-bg);
+    display: grid;
+    grid-template-columns: 1fr 6fr repeat(2, 1fr) 2fr;
+    gap: 1px;
+    align-items: center;
+    justify-content: start;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+header p{
+    margin-left: 0;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: left;
+}
+header .svg{
+    margin-left: 20px;
+    width: 35px;
+}
+header input{
+    align-self: self-start;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 18px;
+    background-color: var(--blue) ;
+    outline: none;
+    margin-right: 20px;
+}
+header img.admin{
+    align-self: self-end;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+nav{
+    font-size: 2rem;
+    grid-column: 1/12;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    padding: 20px;
+    align-items: center;
+}
+nav .nav{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: end;
+}
+nav .nav img{
+    width: 60px;
+    height: auto;
+}
+.nav .greet p:first-child{
+    font-size: 1.4rem;
+}
+nav .buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+}
+.buttons button{
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 8px 30px;
+    border: none;
+    color: white;
+    background-color: var(--bg-color);
+    border-radius: 17px;
+}
+
+aside{
+    grid-area: board;
+    color: #ffffff;
+    background-color: var(--bg-color);
+    padding: 20px 0;
+}
+.aside{
+    height: 40px;
+    margin: 0;
+    display: flex;
+    justify-content:center;
+    padding: 20px 40px  ;
+    gap: 20px;
+    align-items: center;
+    
+}
+aside .aside:first-child{
+    margin-bottom: 30px;
+}
+aside .aside:nth-child(7){
+    margin-bottom: 25px;
+}
+aside .aside img{
+    filter: invert(1);
+    width: 25px;
+    height: 25px;
+    align-self: center;
+}
+aside .aside:first-child img{
+    width: 35px;
+    height: 35px;
+}
+aside .aside p{
+    font-family: 'simple';
+    flex: 2 1 auto  ;
+    text-align: left;
+}
+main{
+    grid-area: main;
+    background-color: var(--main-bg);
+    padding: 50px;
+    display: grid;
+    grid-template-areas: 
+    "card card card news"
+    "card card card memb"
+    ;
+    gap: 20px;
+
+}
+main h2{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+main p{
+    color: var(--card-text);
+    font-size: 1.5rem;
+}
+main h3, main h4{
+    color: var(--card-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.projects{
+    grid-area: card;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--card-bg) ;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 3px 4px 5px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+.card .shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 5px;
+    width: 5px;
+    height: 110%;
+    background-color: var(--card-shadow);
+    border: none;
+    border-radius: 18px;
+    z-index: 2;
+}
+.card p{
+    margin-bottom: 15px;
+}
+.card .tiny{
+    align-self: flex-end;
+    display: flex;
+    gap:18px;
+    justify-content: end;
+    align-items: center;
+}
+.card .tiny img{
+    align-self: flex-end;
+    width: 20px;
+}
+.annoucement{
+    grid-area: news;
+}
+.annoucement .lines{
+    background-color: var(--card-bg) ;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 3px 4px 5px 0 rgba(0, 0, 0, 0.3);
+   
+}
+.lines .line{
+    width: 90%;
+    height: 2px;
+    background-color: var(--main-bg);
+    margin-bottom: 15px;
+}
+
+.trending{
+    grid-area: memb;
+}
+.trending .members{
+    background-color: var(--card-bg) ;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 3px 4px 5px 0 rgba(0, 0, 0, 0.3);
+   
+}
+.members .member{
+    padding: 0 20px;
+    font-weight: bold;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 25px 0;
+}
+.members .member img{
+    width: 25px;
+    height: 25px;
+}
+.members .member p:first-child{
+    font-style: italic;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    grid-area: foot;
+    background-color: var(--blue);
+}
+footer p{
+    font-family: 'simple';
+    text-align: center;
+}
