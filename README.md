@@ -13,5 +13,7 @@ UI elements with shadows and hover effects
 Explore the layout and interact with UI elements.
 Modify the CSS variables in :root to customize the color theme.
 Add new components by following the existing structure.
+## Live Demo
+[Here] (https://olalekan66.github.io/dashboard/)
 ## License
 This project is licensed under the MIT License.
