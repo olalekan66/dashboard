@@ -21,6 +21,7 @@
     --card-text: #000;
     --blue: rgba(121, 169, 175, 0.87);
     --header-bg: #ebf3eade;
+    --hover:#034e52;
 }
 *{
     margin: 0;
@@ -125,7 +126,9 @@ nav .buttons{
     background-color: var(--bg-color);
     border-radius: 17px;
 }
-
+.buttons button:hover{
+    background-color: var(--hover);
+}
 aside{
     grid-area: board;
     color: #ffffff;
